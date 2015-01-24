@@ -13,6 +13,22 @@
     <link href="css/jumbotron.css" rel="stylesheet">
     <link href="css/floodmap.css" rel="stylesheet">
 
+    <!-- Google maps -->
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpvnelnoljDsvOV0CcRG_Kz2P7osmVf3g">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var mapOptions = {
+          center: { lat: -34.397, lng: 150.644},
+          zoom: 8
+        };
+        var map = new google.maps.Map(document.getElementById('flood_map'),
+            mapOptions);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -50,13 +66,15 @@
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
-        <div id="flood_map" class="col-md-10">
-        </div>
-        <div class="col-md-2">
-          <h2>Legend</h2>
-          <p>Green: Okay</p>
-          <p>Blue: Flooded</p>
-          <p>Red: Drought</p>
+        <div class="col-md-8 col-md-offset-2">
+          <div id="flood_map" class="col-md-10">
+          </div>
+          <div class="col-md-2">
+            <h2>Legend</h2>
+            <p>Green: Okay</p>
+            <p>Blue: Flooded</p>
+            <p>Red: Drought</p>
+          </div>
         </div>
       </div>
 

@@ -1,6 +1,7 @@
 div #flood_map {
-    height: 200px;
-    background-color: green;
+    height: 600px;
+    width: 600px;
+    /*background-color: green;*/
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     -o-border-radius: 50px;
