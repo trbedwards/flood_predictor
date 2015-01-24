@@ -1,0 +1,1 @@
+var DATA_URL = "http://localhost:3000"
