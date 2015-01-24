@@ -1,1 +1,1 @@
-var DATA_URL = "http://localhost:3000"
+var DATA_URL = "https://stark-coast-9032.herokuapp.com"
