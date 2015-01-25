@@ -8,9 +8,9 @@
       }
 
       var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-      console.log(DATA_URL + "/users/" + user_id + "/places.xml");
+      console.log(DATA_URL + "/users/" + user_id + "/places.kml");
       var ctaLayer = new google.maps.KmlLayer({
-        url: DATA_URL + "/users/" + user_id + "/places.xml"
+        url: DATA_URL + "/users/" + user_id + "/places.kml"
       });
       ctaLayer.setMap(map);
     } catch(e) {
