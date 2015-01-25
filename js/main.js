@@ -9,8 +9,8 @@ var initialize_user = function(callback){
     }
 
     // configure the hyper link is appropriate
-    $("#nav_home_page").attr("href", "./index.html?user_id=" + obj.user_id);
-    $("#nav_places").attr("href", "./places.html?user_id=" + obj.user_id);
+    $("#nav_home_page").attr("href", "index.html?user_id=" + obj.user_id);
+    $("#nav_places").attr("href", "places.html?user_id=" + obj.user_id);
 
     // call back if there is such callback 
     if (typeof callback === "function") {
@@ -22,7 +22,7 @@ var initialize_user = function(callback){
 };
 
 var no_user_fallback = function(){
-  window.location.href = "/login.html";
+  window.location.href = "./login.html";
 };
 
 var params = function(){
