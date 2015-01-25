@@ -18,7 +18,8 @@
       var latlong = new google.maps.LatLng(51.347592, 0.353578);
       var mapOptions = {
         zoom: 11,
-        center: latlong
+        center: latlong,
+        mapTypeId: google.maps.MapTypeId.SATELLITE
       }
       var place_id = params().place_id;
 
@@ -38,7 +39,9 @@
         error: function(){
           alert("An unkown error occured!");
         }
-      })
+      });
+
+      generate_map_overlay(map);
     } catch(e) {
 
     }

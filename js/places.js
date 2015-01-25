@@ -16,7 +16,7 @@
   };
 
   var initialize_map = function() {
-    var center = new google.maps.LatLng(51.347592, 0.353578);
+    var center = new google.maps.LatLng(43.204722, 6.1370835);
 
     map = new google.maps.Map(document.getElementById("map-canvas"), {
       zoom: 11,
@@ -31,6 +31,8 @@
     poly.setPaths(new google.maps.MVCArray([path]));
 
     google.maps.event.addListener(map, 'click', addPoint);
+
+    // generate_map_overlay(map);
   };
 
   var addPoint = function(event) {
