@@ -10,7 +10,7 @@
       var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
       console.log(DATA_URL + "/users/" + user_id + "/places.kml");
       var ctaLayer = new google.maps.KmlLayer({
-        url: DATA_URL + "/users/" + user_id + "/places.kml"
+        url: DATA_URL + "/users/" + user_id + "/places.kml?dummy=" + (new Date()).getTime()
       });
       ctaLayer.setMap(map);
     } catch(e) {

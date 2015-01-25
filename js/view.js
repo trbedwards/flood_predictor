@@ -24,7 +24,7 @@
 
       var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
       var ctaLayer = new google.maps.KmlLayer({
-        url: DATA_URL + "/places/" + place_id + ".kml"
+        url: DATA_URL + "/places/" + place_id + ".kml?dummy=" + (new Date()).getTime()
       });
       ctaLayer.setMap(map);
 
