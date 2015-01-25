@@ -21,7 +21,7 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpvnelnoljDsvOV0CcRG_Kz2P7osmVf3g">
     </script>
     <script src="js/main.js"></script>
-    <script type="text/javascript" src="js/map.js"></script>
+    <script type="text/javascript" src="js/places.js"></script>
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -43,25 +43,40 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a id="nav_home_page" class="navbar-brand" href="/">FLOOD PREDICTOR APP</a>
+          <a id="nav_home_page" class="navbar-brand">FLOOD PREDICTOR APP</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a id="nav_places" href="./places.html">My Places</a></li>
+            <li class="active"><a id="nav_places" href="./places.html">My Places</a></li>
             <li><a href="./login.html">Logout</a></li>
-          </ul>
         </div><!-- /.navbar-collapse -->
       </div>
     </nav>
 
-      <div class="row">
-          <div id="map-canvas"></div>
+    <div class="container">
+      <div class="page-header">
+        <h2>List of Your Saved Areas</h2>
       </div>
+      <div>
+        <table class="table">
+          <thead>
+            <th>Name</th>
+            <th>Description</th>
+            <th>View</th>
+          </thead>
+          <tbody id="places_table_body">
+            <tr>
 
-      <hr>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-      <footer>
+    <footer>
+      <div class="container">
         <p>ESA Appathon 2015</p>
-      </footer>
+      </div>
+    </footer>
   </body>
 </html>
