@@ -66,7 +66,7 @@
 
   var stringify_marker_arr = function(){
     return JSON.stringify(markers.map(function(marker){
-      return [marker.position.D, marker.position.k]
+      return [marker.position.k, marker.position.D]
     }));
   };
 
@@ -105,24 +105,56 @@
               var places = data.places;
               places.forEach(function(place){
                   var tr = $(document.createElement("tr"));
-                  ["name", "description", "link"].forEach(function(prop){
+                  ["name", "description"].forEach(function(prop){
                       var td = $(document.createElement("td"));
-                      if(prop === "link") {
-                          var a = document.createElement("a");
-                          a.href = "./view.html?place_id=" + place.id + "&user_id=" + user_id;
-                          a.appendChild(document.createTextNode("View"));
-                          td.append(a);
-                      } else {
-                          td.append(document.createTextNode(place[prop] || "N/A"));
-                      }
+                      td.append(document.createTextNode(place[prop] || "N/A"));
                       tr.append(td);
                   });
+                  // link to the view page for the stuff
+                  var a = $(document.createElement("a"));
+                  var td = $(document.createElement("td"));
+                  a.append(document.createTextNode("View"));
+                  a.attr("href", "./view.html?place_id=" + place.id + "&user_id=" + user_id);
+                  td.append(a);
+                  tr.append(td);
+
+                  // button do destroy a single element
+                  var button = $(document.createElement("button"));
+                  var td = $(document.createElement("td"));
+                  button.append(document.createTextNode("Remove!"));
+                  button.addClass("remove-place btn btn-danger");
+                  button.attr("id", place.id);
+                  td.append(button);
+                  tr.append(td);
+
+                  // add the whole row into the thing
                   $("#places_table_body").append(tr);
+
+                  // bind buttons to events
+                  $("button.remove-place").click(function(e){
+                    e.preventDefault();
+                    remove_place(this);
+                  });
               });
           }
       })
   };
 
+  var remove_place = function(element){
+    var place_id = element.id;
+    console.log(element);
+    $(element).parent().parent().remove();
+    $.ajax({
+      type: "DELETE",
+      url: DATA_URL + "/places/" + place_id + ".json",
+      success: function(data){
+        console.log("removed place!");
+      },
+      error: function(data){
+        console.log(data);
+      }
+    });
+  };
 
   $(document).ready(function(){
       initialize_user(fetch_places_list);
