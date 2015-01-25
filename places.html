@@ -54,6 +54,7 @@
     </nav>
 
     <div class="container">
+      <!-- List of all saved areas -->
       <div class="page-header">
         <h2>List of Your Saved Areas</h2>
       </div>
@@ -70,6 +71,35 @@
             </tr>
           </tbody>
         </table>
+      </div>
+      <!-- A User interface to allow user to highlight new areas to add into the  -->
+      <div class="page-header">
+        <h2>Add a New Location to Your Saved Location</h2>
+        <div class="row">
+          <div class="col-md-8">
+            <div id="map-canvas"></div>
+          </div>
+          <div class="col-md-4">
+            <p>Select an Area from the map to be added into your location!</p>
+            <form id="places_new_form">
+              <div class="form-group">
+                <label>Coordinates</label>
+                <div id="places_new_coordinates">N/A</div>
+              </div>
+              <div class="form-group">
+                <label>Name</label>
+                <input id="places_new_name" class="form-control" type="text" />
+              </div>
+              <div class="form-group">
+                <label>Description</label>
+                <textarea id="places_new_description" rows="4" class="form-control"></textarea>
+              </div>
+              <div class="form-group">
+                <input class="btn btn-primary" type="submit" value="create new area" />
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
 
